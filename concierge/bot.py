@@ -1,16 +1,17 @@
 import logging
 
 import discord
+import toml
 from discord.ext import commands, ipc
 
 logger = logging.getLogger(__name__)
-
+config = toml.load("config.toml")
 
 class ConciergeBot(commands.Bot):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.ipc = ipc.Server(self, secret_key="my_secret_key")  # create our IPC Server
+        self.ipc = ipc.Server(self, secret_key=config["global"]["ipc_secret"])  # create our IPC Server
 
     async def on_ready(self):
         """Called upon the READY event"""
