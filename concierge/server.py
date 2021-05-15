@@ -20,7 +20,7 @@ async def respond():
     token = request.headers.get('Digest').split("=", 1)[1]
     request_data = await request.get_data()
     new_digest = hmac.new(
-        key=config['webhook']['signature'].encode(),
+        key=config['server']['signature'].encode(),
         msg=request_data,
         digestmod="md5"
     ).hexdigest()
