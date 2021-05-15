@@ -29,6 +29,6 @@ bot = ConciergeBot(command_prefix="+", intents=discord.Intents.all())
 
 
 @ipc.server.route()
-async def on_webhook_received(self, data):
+async def on_webhook_received(data):
     logger.info(data.request_json)
     return True
