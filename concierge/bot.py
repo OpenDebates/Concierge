@@ -74,24 +74,6 @@ async def on_webhook_received(data):
                         f"the {rules_tc.mention} to make your stay worthwhile."
         )
         await general_tc.send(embed=embed)
-    elif request['OP'] == 3:
-        guild = bot.get_guild(config["bot"]["guild_id"])
-        general_tc = discord.utils.get(guild.channels, name="general")
-        about_tc = discord.utils.get(guild.channels, name="about")
-        rules_tc = discord.utils.get(guild.channels, name="rules")
-        member = guild.get_member(int(request['member']['id']))
-        embed = discord.Embed(
-            description=f"Welcome to Open Debates - {member.mention} !\n"
-                        f"\n"
-                        f"This server is unique in that debates can take place "
-                        f"through an ELO rating system. To learn more, please "
-                        f"watch this [video](https://www.youtube.com/watch?v=L2NthdKPLZQ)."
-                        f"You can also pick up some roles and learn more about the server "
-                        f"from the {about_tc.mention} section.  In addition, "
-                        f"please ensure you've read and understood "
-                        f"the {rules_tc.mention} to make your stay worthwhile."
-        )
-        await general_tc.send(embed=embed)
     elif request['OP'] == 5:
         logger.info(f"Test Webhook: {request}")
     return True
