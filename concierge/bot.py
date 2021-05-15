@@ -7,6 +7,7 @@ from discord.ext import commands, ipc
 logger = logging.getLogger(__name__)
 config = toml.load("config.toml")
 
+
 class ConciergeBot(commands.Bot):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
