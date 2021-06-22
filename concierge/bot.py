@@ -38,7 +38,7 @@ class ConciergeBot(commands.Bot):
                         f"\n"
                         f"This server is unique in that debates can take place "
                         f"through an ELO rating system. To learn more, please "
-                        f"watch this [video](https://www.youtube.com/watch?v=L2NthdKPLZQ)."
+                        f"watch this [video](https://www.youtube.com/watch?v=L2NthdKPLZQ). "
                         f"You can also pick up some roles and learn more about the server "
                         f"from the {about_tc.mention} section.  In addition, "
                         f"please ensure you've read and understood "
